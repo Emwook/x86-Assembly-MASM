@@ -9,7 +9,7 @@ This repository contains low-level programming projects developed in x86 Assembl
     * Interrupt handling and BIOS/DOS services.
     * Memory addressing modes.
     * Stack operations and procedure calls.
-* **`advanced_implementations/`**: Independent scripts solving more complex problems, such as:
+* **`personal_implementations/`**: Independent scripts solving more complex problems, such as:
     * Efficient string and array processing.
     * Bitwise optimizations.
     * Custom algorithms implemented directly in assembly for performance and educational purposes.
