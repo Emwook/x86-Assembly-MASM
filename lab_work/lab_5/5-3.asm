@@ -1,0 +1,35 @@
+.686
+.XMM ; zezwolenie na asemblację rozkazów grupy SSE
+.model flat
+public _dodaj_SSE
+
+.code
+	_dodaj_SSE PROC
+		 push ebp
+		 mov ebp, esp
+		 push ebx
+		 push esi
+		 push edi
+
+		 mov esi, [ebp+8] ; adres pierwszej tablicy
+		 mov edi, [ebp+12] ; adres drugiej tablicy
+		 mov ebx, [ebp+16] ; adres tablicy wynikowej
+
+		 movups xmm5, [esi]
+		 movups xmm6, [edi]
+
+		; sumowanie czterech liczb zmiennoprzecinkowych zawartych
+		; w rejestrach xmm5 i xmm6
+
+		 paddsb xmm5, xmm6
+
+		; zapisanie wyniku sumowania w tablicy w pamięci
+		 movups [ebx], xmm5
+
+		 pop edi
+		 pop esi
+		 pop ebx
+		 pop ebp
+		 ret
+	_dodaj_SSE ENDP
+	END
